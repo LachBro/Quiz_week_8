@@ -5,7 +5,7 @@ connection = sqlite3.connect('climate.db')
 cursor = connection.cursor()
 
 # retrieve data from climate.db database
-query = "SELECT year, co2, temp FROM ClimateData"
+query = "SELECT Year, CO2, Temperature FROM ClimateData"
 cursor.execute(query)
 data = cursor.fetchall()
 
@@ -25,8 +25,9 @@ plt.subplot(2, 1, 2)
 plt.plot(years, temp, 'r*-') 
 plt.ylabel("Temp (C)") 
 plt.xlabel("Year (decade)") 
-plt.show() 
+
 plt.savefig("co2_temp_1.png")
+plt.show()
 
 #close the database connection
 connection.close()
